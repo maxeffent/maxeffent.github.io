@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Maximum Effort Enterprises</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #fff;
+            background: #0a0a0a;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: #000;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 30px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 2rem 1rem 0rem;
+            background: transparent;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #ff0000;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Content Container */
+        .about-container {
+            max-width: 1200px;
+            margin: 2rem auto 0rem;
+            padding: 0 2rem 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-section {
+            background: #0f0f0f;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            color: #ff0000;
+            margin-bottom: 1rem;
+        }
+
+        .about-section h3 {
+            font-size: 1.5rem;
+            color: #ff0000;
+            margin: 1rem 0 1rem;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-section {
+            background: #0f0f0f;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 2px solid #ff0000;
+            margin-bottom: 2rem;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid #ff0000;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            color: #888;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-section,
+            .intro-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .about-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .about-section h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo-short.png" alt="Maximum Effort Enterprises">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Not Your Typical Security Firm</h1>
+    </section>
+
+    <div class="about-container">
+        <div class="intro-section">
+            <p>We've seen cybersecurity from every angle, from the boardroom, to the war room, to the family living room. Too often, security is treated like a chore and a box to check, rather than a skill to build. However, real security isn't a policy or a product, it's a mindset that can be learned, practiced, and strengthened. When people know what to do and how to do it, they stop being soft targets and start taking control.</p>
+            
+            <p>Whether you're protecting your family's digital life, your small business, or your growing enterprise, we give you the tools, mindset, and training to protect what matters most to you.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>To make cybersecurity practical for individuals, families, and growing businesses. We teach people how to take control of their digital lives with practical, proven tools and training, because when you understand what's at stake and how to protect it, you don't need enterprise budgets or bureaucracy to stay safe.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Who We Serve</h2>
+            
+            <h3>Individuals & Families</h3>
+            <p>You're told to be careful online, but rarely shown how. We replace vague advice with step-by-step guidance, from securing your accounts to locking down your identity and finances. The goal isn't fear; it's freedom. You deserve to live connected and confident.</p>
+            
+            <h3>Small Businesses</h3>
+            <p>You're expected to protect customer data like a Fortune 500, but without the staff or budget. We help you build practical defenses that fit your operations without fluff or over-engineering. Smart security lets you stay focused on what matters: running your business and earning customer trust.</p>
+            
+            <h3>Growing Enterprises</h3>
+            <p>You're scaling fast, and security can't be an afterthought. We bridge the gap between startup hustle and enterprise-grade discipline, building processes that grow with you, not against you and where security becomes an enabler, not an obstacle.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Who We Are</h2>
+            <p>Maximum Effort Enterprises was founded by a CISSP-certified security professional with over 15 years in cybersecurity, IT, and communications, including roles as a Security Executive at Ericsson, Solutions Engineer at Cradlepoint, and serving as a Special Forces Communications Sergeant (Green Beret) in the U.S. Army.</p>
+            
+            <p>We've operated in environments where failure wasn't an option. That's the same energy we bring here to help forge hard targets that are proactive, resilient, and prepared.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Maximum Effort Enterprises, LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Particle Network Effect
+        window.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
+            
+            const particles = [];
+            const particleCount = 80;
+            const maxDistance = 120;
+            
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * (canvas.width * 0.38);
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.radius = 2;
+                }
+                
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    
+                    if (this.x < 0 || this.x > canvas.width * 0.38) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#ff0000';
+                    ctx.fill();
+                }
+            }
+            
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+            
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < maxDistance) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / maxDistance})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                connectParticles();
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+            
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                
+                particles.forEach(particle => {
+                    if (particle.x > canvas.width * 0.38) {
+                        particle.x = Math.random() * (canvas.width * 0.38);
+                    }
+                    if (particle.y > canvas.height) {
+                        particle.y = Math.random() * canvas.height;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

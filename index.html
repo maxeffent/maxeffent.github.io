@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Effort Enterprises - Forging Hard Targets</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #fff;
+            background: #0a0a0a;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: #000;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 30px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-content h1 span {
+            color: #ff0000;
+        }
+
+        .hero-content .hero-logo {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.8rem;
+            color: #ff0000;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff0000;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: 2px solid #ff0000;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #ff0000;
+        }
+
+        /* What We Do Section */
+        .what-we-do {
+            padding: 4rem 2rem;
+            background: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .what-we-do .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .what-we-do h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #ff0000;
+        }
+
+        .services-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #ff0000;
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid #ff0000;
+            position: relative;
+            z-index: 10;
+        }
+
+        footer p {
+            color: #888;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-content .hero-logo {
+                max-width: 90%;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo-short.png" alt="Maximum Effort Enterprises">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/logo-long.png" alt="Maximum Effort Enterprises" class="hero-logo">
+            <p class="tagline">Forging Hard Targets</p>
+            <p>Digital self-defense training and cybersecurity consulting for individuals, families, and businesses who refuse to be easy prey.</p>
+            <a href="#" 
+               class="cta-button"
+               data-cal-link="maxeffort/free-consultation"
+               data-cal-namespace="free-consultation"
+               data-cal-config='{"layout":"month_view","theme":"dark"}'>
+               Schedule Free Consultation
+            </a>
+        </div>
+    </section>
+
+    <section class="what-we-do">
+        <div class="container">
+            <h2>Who We Serve</h2>
+            <div class="services-preview">
+                <div class="service-card">
+                    <h3>Individuals & Families</h3>
+                    <p>Learn to protect your digital life with Operation Hard Target - our comprehensive digital self-defense workshop designed for everyday people.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Small Businesses</h3>
+                    <p>Security assessments, team training, and network security consulting to protect your business from cyber threats.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Growing Enterprises</h3>
+                    <p>Virtual CISO services, compliance support, and strategic security program development for scaling organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Maximum Effort Enterprises, LLC. All rights reserved.</p>
+    </footer>
+
+    <!-- Cal.com element-click embed code -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "free-consultation", {origin:"https://app.cal.com"});
+    Cal.ns["free-consultation"]("ui", {"theme":"dark","cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#ff0000"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+
+    <script>
+        // Particle Network Effect
+        window.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
+        
+        const particles = [];
+        const particleCount = 80;
+        const maxDistance = 120;
+        
+        class Particle {
+            constructor() {
+                // Concentrate particles in left 38% of screen (golden ratio)
+                this.x = Math.random() * (canvas.width * 0.38);
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = 2;
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                // Keep particles in left 38% area
+                if (this.x < 0 || this.x > canvas.width * 0.38) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#ff0000';
+                ctx.fill();
+            }
+        }
+        
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+        
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < maxDistance) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / maxDistance})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        window.addEventListener('resize', () => {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            // Reposition particles to maintain left 38% area after resize
+            particles.forEach(particle => {
+                if (particle.x > canvas.width * 0.38) {
+                    particle.x = Math.random() * (canvas.width * 0.38);
+                }
+                if (particle.y > canvas.height) {
+                    particle.y = Math.random() * canvas.height;
+                }
+            });
+        });
+        });
+    </script>
+</body>
+</html>
