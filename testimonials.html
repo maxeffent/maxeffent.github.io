@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Maximum Effort Enterprises</title>
+    <title>Testimonials - Maximum Effort Enterprises</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         * {
@@ -86,100 +86,63 @@
             color: #ff0000;
         }
 
-        /* Thank You Content */
-        .thank-you-container {
+        /* Hero Section */
+        .hero {
             margin-top: 80px;
-            min-height: calc(100vh - 160px);
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: transparent;
+            text-align: center;
             padding: 2rem;
             position: relative;
-            z-index: 1;
+            overflow: hidden;
         }
 
-        .thank-you-content {
-            text-align: center;
-            max-width: 700px;
-            background: #0f0f0f;
-            padding: 3rem;
-            border-radius: 8px;
-            border: 1px solid #333;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        
-        .thank-you-content:hover {
-            border-color: #ff0000;
-            transform: translateY(-5px);
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
-        .thank-you-content h1 {
-            font-size: 3rem;
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-content h1 span {
             color: #ff0000;
-            margin-bottom: 0;
         }
 
-        .thank-you-content p {
+        .hero-content .hero-logo {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.8rem;
+            color: #ff0000;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-content p {
             font-size: 1.2rem;
             color: #ccc;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .checkmark {
-            font-size: 4rem;
-            color: #ff0000;
-            margin-bottom: 0;
-        }
-
-        .next-steps {
-            background: #1a1a1a;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .next-steps h2 {
-            color: #ff0000;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .next-steps ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .next-steps li {
-            color: #ccc;
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .next-steps li:before {
-            content: "▸";
-            color: #ff0000;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
 
         .cta-button {
             display: inline-block;
             background: #ff0000;
             color: #fff;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
             border-radius: 5px;
             transition: all 0.3s;
@@ -191,14 +154,53 @@
             color: #ff0000;
         }
 
-        .cta-button.secondary {
+        /* What We Do Section */
+        .what-we-do {
+            padding: 4rem 2rem;
             background: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .what-we-do .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .what-we-do h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             color: #ff0000;
         }
 
-        .cta-button.secondary:hover {
-            background: #ff0000;
-            color: #fff;
+        .services-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #ff0000;
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #ccc;
         }
 
         /* Footer */
@@ -251,20 +253,13 @@
                 border-bottom: none;
             }
 
-            .thank-you-content {
-                padding: 3rem 2rem;
+            .hero-content .hero-logo {
+                max-width: 90%;
             }
 
-            .thank-you-content h1 {
-                font-size: 2rem;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            .cta-button {
-                width: 100%;
+            .hero-content .tagline {
+                font-size: 1.3rem;
+                color: #fff;
             }
         }
     </style>
@@ -289,34 +284,12 @@
         </nav>
     </header>
 
-    <div class="thank-you-container">
-        <div class="thank-you-content">
-            <div class="checkmark">✓</div>
-            <h1>Message Received!</h1>
-            <p>Thank you for reaching out to Maximum Effort Enterprises. Your message has been successfully delivered.</p>
-            
-            <div class="next-steps">
-                <h2>What Happens Next?</h2>
-                <ul>
-                    <li>We'll review and respond your message within two business days</li>
-                    <li>Be sure to check your spam folder in case our reply is moved there</li>
-                </ul>
-            </div>
-
-            <p>Ready to take the next step?</p>
-
-            <div class="button-group">
-                <a href="#" 
-                   class="cta-button secondary"
-                   data-cal-link="maxeffort/free-consultation"
-                   data-cal-namespace="free-consultation"
-                   data-cal-config='{"layout":"month_view","theme":"dark"}'>
-                   Schedule Free Consultation
-                </a>
-            </div>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/logo-long.png" alt="Maximum Effort Enterprises" class="hero-logo">
+            <p class="tagline">TESTAMONIALS COMING SOON</p>
         </div>
-    </div>
-
+    </section>
     <footer>
         <p>&copy; 2025 Maximum Effort Enterprises, LLC. All rights reserved.</p>
     </footer>
@@ -345,85 +318,89 @@
             }
             
             resizeCanvas();
+        
+        const particles = [];
+        const particleCount = 80;
+        const maxDistance = 120;
+        
+        class Particle {
+            constructor() {
+                // Concentrate particles in left 38% of screen (golden ratio)
+                this.x = Math.random() * (canvas.width * 0.38);
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = 2;
+            }
             
-            const particles = [];
-            const particleCount = 80;
-            const maxDistance = 120;
-            
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * (canvas.width * 0.38);
-                    this.y = Math.random() * canvas.height;
-                    this.vx = (Math.random() - 0.5) * 0.5;
-                    this.vy = (Math.random() - 0.5) * 0.5;
-                    this.radius = 2;
-                }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
                 
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
+                // Keep particles in left 38% area
+                if (this.x < 0 || this.x > canvas.width * 0.38) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#ff0000';
+                ctx.fill();
+            }
+        }
+        
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+        
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (this.x < 0 || this.x > canvas.width * 0.38) this.vx *= -1;
-                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                }
-                
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = '#ff0000';
-                    ctx.fill();
-                }
-            }
-            
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-            
-            function connectParticles() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < maxDistance) {
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / maxDistance})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke();
-                        }
+                    if (distance < maxDistance) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / maxDistance})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
                     }
                 }
             }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                
-                connectParticles();
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-            
-            window.addEventListener('resize', () => {
-                resizeCanvas();
-                
-                particles.forEach(particle => {
-                    if (particle.x > canvas.width * 0.38) {
-                        particle.x = Math.random() * (canvas.width * 0.38);
-                    }
-                    if (particle.y > canvas.height) {
-                        particle.y = Math.random() * canvas.height;
-                    }
-                });
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
             });
+            
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        window.addEventListener('resize', () => {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            // Reposition particles to maintain left 38% area after resize
+            particles.forEach(particle => {
+                if (particle.x > canvas.width * 0.38) {
+                    particle.x = Math.random() * (canvas.width * 0.38);
+                }
+                if (particle.y > canvas.height) {
+                    particle.y = Math.random() * canvas.height;
+                }
+            });
+        });
         });
     </script>
 </body>

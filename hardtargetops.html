@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Maximum Effort Enterprises</title>
+    <title>Hard Target Ops - Maximum Effort Enterprises</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <style>
         * {
             margin: 0;
@@ -133,6 +138,11 @@
             color: #fff;
             margin: 2rem 0 1rem;
         }
+        
+        .intro-section h2 {
+            font-size: 1.5rem;
+            color: #ff0000;
+        }
 
         .about-section p {
             font-size: 1.1rem;
@@ -145,6 +155,7 @@
             margin-bottom: 0;
         }
         
+        .ideal-for ul,
         .intro-section ul,
         .about-section ul {
             font-size: 1.1rem;
@@ -170,6 +181,14 @@
             position: absolute;
             left: 0;
         }
+        
+        .ideal-for li:before {
+            content: "✓";
+            color: #fff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
 
       .intro-section {
           background: #0f0f0f;
@@ -190,7 +209,25 @@
             margin-bottom: 0;
         }
         
+        .social-icons {
+          display: flex;
+          justify-content: center;
+          gap: 40px; /* space between icons */
+          margin: 20px 0;
+        }
         
+        .social-icons a {
+          margin: 0 15px;
+          font-size: 2rem;   /* icon size */
+          color: #ff0000;    /* icon color */
+          text-decoration: none;
+          transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+          color: #ffffff;    /* hover color */
+        }
+
         .intro-section,
         .about-section {
             transition: border-color 0.3s, transform 0.3s;
@@ -319,37 +356,53 @@
     </header>
 
     <section class="page-header">
-        <h1>Strategic Security Leadership With Special Operations Roots</h1>
+        <h1>Operation: Hard Target</h1>
     </section>
 
     <div class="about-container">
         <div class="about-section">
-            <h2>Who We Are</h2>
-            <p>Maximum Effort is led by Aaron Maben, a CISSP-certified security leader and former Green Beret with over 15 years of cybersecurity, IT, and operational experience.</p>
-            
-            <p style="margin-bottom: 0;">The Special Forces mission has shaped how we operate: Green Berets are trained to build capability where it doesn't exist, unite diverse teams behind a common objective, and create disproportionate impact with limited resources. This force multiplier mindset shows up in how we advise and lead by:</p>
+            <h2>Digital Self-Defense Made Simple</h2>
+            <p>Most people know they <i>should</i> be safer online, yet a lot of people we talk to tell similar stories:</p>
             <ul>
-                <li>Understanding your organization and speaking the language of your industry</li>
-                <li>Influencing leaders to break down silos and execute from a shared operational picture</li>
-                <li>Navigating risk and rapidly adapting in dynamic and complex environments</li>
-                <li>Re-framing problems to develop innovative solutions that create competitive advantage</li>
-                <li>Strengthening trust and cohesion within your organization and with your customers</li>
+                <li>Password reuse across multiple accounts</li>
+                <li>Passwords written down in a notebook or saved in a browser</li>
+                <li>Victims of identity theft</li>
+                <li>No device authentication</li>
+                <li>Frustration with work authentication policies, MFA, and password requirements</li>
             </ul>
             
-            <p>Combined with real-world experience in governance, incident response, distributed networks, and wireless communications, this background gives us the ability to help organizations establish and scale resilient, mission-driven security programs.</p>
-        </div>
-
-        <div class="about-section">
-            <h2>Who We Serve</h2>
+            <p>These aren't failures. They're signs that no one has ever taught everyday people practical and effective ways to protect themselves.</p>
             
-            <h3>Early-Stage & Growing Businesses</h3>
-            <p>Companies at the outset of their security journey and needing clear guidance on where they stand, what to prioritize, and how to execute while navigating risk and minimizing complexity.</p>
+            <h3>Hard Target Ops exists to change that.</h3>
             
-            <h3>Operationally Burdened Organizations</h3>
-            <p>Businesses carrying risk, technical debt, or audit pressure and ready to break out of reactive security by building structure, aligning leadership, and improving readiness to operate with confidence.</p>
+            <p>Operation: Hard Target (OHT) started as a hands-on workshop for individuals and families who wanted real protection without having to be a cybersecurity expert. Over time, it became clear: when people implement basic cyber hygiene at home, they become more secure <strong>everywhere</strong>. Better security habits in personal life create a more resilient, vigilant, and dependable workforce that serves as the front line of defense for their organizations.</p>
             
-            <h3>Security-Minded Enterprises</h3>
-            <p>Organizations that already treat security as a force multiplier and seeking executive-level partnership to refine governance, strengthen resilience, and stay ahead of operational and regulatory demands.</p>
+            <p>Now, OHT is growing into a community effort called Hard Target Ops focused on giving people simple, step-by-step actions they can actually follow. No fear tactics. No jargon. Just small wins that add up to real protection.<p>
+            
+            <p>Across short videos and practical walkthroughs, you'll learn things like:<p>
+            <ul class="ideal-for">
+                <li>How to spot social engineering attempts</li>
+                <li>How to respond to account compromise</li>
+                <li>How to select and properly use a password manager</li>
+                <li>How to freeze your credit to mitigate identity theft</li>
+                <li>How to prioritize and harden your critical accounts</li>
+                <li>How to prepare for account recovery before disaster strikes</li>
+                <li>...and more ways to harden your digital life</li>
+            </ul>
+            
+            <p><strong>Follow along and become a hard target one step at a time @hardtargetops</strong></p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@hardtargetops" target="_blank" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/hardtargetops/" target="_blank" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61583954303517" target="_blank" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p style="margin-bottom: 0;">If you want direct support, the original Operation: Hard Target workshop is still available for 1:1 digital self-defense coaching and a full self-guided video curriculum is in the works for those who want to take the entire journey at their own pace.</p>
         </div>
     </div>
 

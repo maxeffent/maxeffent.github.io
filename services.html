@@ -100,7 +100,7 @@
 
         .page-header h1 {
             font-size: 3rem;
-            color: #ff0000;
+            color: #fff;
             margin-bottom: 1rem;
         }
 
@@ -130,9 +130,9 @@
             color: #ff0000;
         }
 
-        /* Services Sections */
+        /* Services Container */
         .services-container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
             position: relative;
@@ -140,29 +140,35 @@
             flex: 1;
         }
 
-        .service-section {
-            margin-bottom: 2rem;
+        .service-box {
             background: #0f0f0f;
+            border: 2px solid #333;
             border-radius: 8px;
-            border: 1px solid #333;
+            margin-bottom: 2rem;
             overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        
+        .service-box:hover {
+            border-color: #ff0000;
         }
 
         .service-header {
-            padding: 1rem 3rem;
+            padding: 1.5rem 2.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: background 0.3s;
+            border-bottom: 2px solid #333;
         }
 
-        .service-header:hover {
-            background: #1a1a1a;
+        .service-box.expanded .service-header {
+            border-color: #ff0000;
         }
 
-        .service-header h2 {
-            font-size: 2.2rem;
+        .service-box h2 {
+            font-size: 2rem;
             color: #ff0000;
             margin: 0;
         }
@@ -173,7 +179,7 @@
             transition: transform 0.3s;
         }
 
-        .service-section.expanded .expand-icon {
+        .service-box.expanded .expand-icon {
             transform: rotate(180deg);
         }
 
@@ -183,75 +189,78 @@
             transition: max-height 0.4s ease-out;
         }
 
-        .service-section.expanded .service-content {
+        .service-box.expanded .service-content {
             max-height: 3000px;
         }
 
         .service-inner {
-            padding: 0.5rem 3rem 3rem;
+            padding: 2.5rem;
         }
 
-        .service-section p {
+        .service-box p {
             font-size: 1.1rem;
             color: #ccc;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.8;
         }
 
-        .service-details {
-            background: #1a1a1a;
-            padding: 1rem 1rem 0.25rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-details p {
-            margin-bottom: 0.5rem;
-        }
-
-        .service-details h3 {
+        .service-box h3 {
+            font-size: 1.3rem;
             color: #ff0000;
-            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .ideal-for h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-box ul {
+            list-style: none;
+            margin-left: 0;
             margin-bottom: 1rem;
         }
 
-        .service-details ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .service-details li {
+        .service-box li {
             color: #ccc;
+            font-size: 1.1rem;
             margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
         }
 
-        .service-details li:before {
+        .service-box li:before {
             content: "▸";
             color: #ff0000;
+            font-size: 1.1rem;
             font-weight: bold;
             position: absolute;
             left: 0;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: #ff0000;
-            color: #fff;
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            font-size: 1rem;
+        .service-box .price {
+            font-size: 1.3rem;
+            color: #ff0000;
             font-weight: bold;
-            border-radius: 5px;
-            transition: all 0.3s;
-            border: 2px solid #ff0000;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .cta-button:hover {
-            background: transparent;
-            color: #ff0000;
+        .service-box .ideal-for {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+        }
+        
+        .ideal-for li:before {
+            content: "✓";
+            color: #fff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         /* Footer */
@@ -260,6 +269,7 @@
             padding: 2rem;
             text-align: center;
             border-top: 2px solid #ff0000;
+            margin-top: 4rem;
             position: relative;
             z-index: 10;
         }
@@ -306,19 +316,18 @@
 
             .page-header h1 {
                 font-size: 2rem;
-                color: #fff;
             }
 
             .service-header {
                 padding: 1.5rem;
             }
 
-            .service-header h2 {
-                font-size: 1.8rem;
+            .service-box h2 {
+                font-size: 1.6rem;
             }
 
             .service-inner {
-                padding: 0 1.5rem 2rem;
+                padding: 1.5rem;
             }
         }
     </style>
@@ -336,6 +345,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="hardtargetops.html">Hard Target Ops</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -343,7 +354,7 @@
 
     <section class="page-header">
         <h1>Services</h1>
-        <p>Tailored security solutions for individuals, families, and businesses at every stage of growth.</p>
+        <p>Tailored security solutions for organizations at every stage of growth.</p>
         <a href="#" 
            class="cta-button-header"
            data-cal-link="maxeffort/free-consultation"
@@ -354,94 +365,95 @@
     </section>
 
     <div class="services-container">
-        <!-- Individuals & Families -->
-        <div class="service-section" onclick="toggleService(this)">
+        <!-- RSPA -->
+        <div class="service-box" onclick="toggleService(this)">
             <div class="service-header">
-                <h2>For Individuals & Families</h2>
+                <h2>Rapid Security Posture Assessment (RSPA)</h2>
                 <span class="expand-icon">▼</span>
             </div>
             <div class="service-content">
                 <div class="service-inner">
-                    <p>You don't need to be a tech expert to protect yourself online. Operation Hard Target (OHT) is our comprehensive digital self-defense workshop designed to give everyday people the skills and tools to defend against the most common cyber threats.</p>
-            
-            <div class="service-details">
-                <h3>Operation Hard Target Workshop</h3>
-                <p>A practical, hands-on training program covering:</p>
-                <ul>
-                    <li>Social engineering tactics and how to spot them</li>
-                    <li>Monitoring for account compromise and how to respond</li>
-                    <li>Establishing a credit freeze to protect against identity theft</li>
-                    <li>Using a password manager to implement unique, strong credentials without having to remember them</li>
-                    <li>Conducting an asset inventory and hardening your critical accounts with strong Multi-Factor Authentication (MFA)</li>
-                    <li>Contingency planning and testing for account recovery for when calamity strikes</li>
-                </ul>
-            </div>
-            
-                    <p style="margin-bottom: 0;"><strong>Who this is for:</strong> Individuals and families who want to take control of their digital security without becoming cybersecurity experts. If you've ever felt overwhelmed by online threats or unsure where to start, this workshop will give you clarity and confidence.</p>
+                    <p>The RSPA is a fast, fixed-fee assessment of your organization's real world security posture with consideration of your business model, resources, and constraints. Through a structured interview and targeted review, you get a concise report outlining the top three to five risks most likely to impact your organization, along with practical actions to address them.</p>
+                    
+                    <div class="ideal-for">
+                        <h3>Ideal for:</h3>
+                        <ul>
+                            <li>Organizations that need to understand “where they stand” before committing to bigger security spend</li>
+                            <li>Companies without formal security processes who want a simple, prioritized starting point</li>
+                            <li>Teams encountering their first signs of security pressure (e.g., customer questionnaires, insurance renewals, basic compliance asks, etc.)</li>
+                            <li>Leadership wanting a quick, objective readout to guide budgeting or roadmap discussions</li>
+                            <li>Businesses with small IT teams that need clarity, not ongoing oversight or long-term engagement</li>
+                        </ul>
+                        <h3>Price: $950</h3>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Small Businesses -->
-        <div class="service-section" onclick="toggleService(this)">
+        <!-- ICMP -->
+        <div class="service-box" onclick="toggleService(this)">
             <div class="service-header">
-                <h2>For Small Businesses</h2>
+                <h2>Incident & Crisis Management Package (ICMP)</h2>
                 <span class="expand-icon">▼</span>
             </div>
             <div class="service-content">
                 <div class="service-inner">
-                    <p>Small businesses are prime targets for cyberattacks because they often lack dedicated security resources. We help you identify vulnerabilities, train your team, and implement practical security controls that fit your budget and operations.</p>
-            
-            <div class="service-details">
-                <h3>Security Assessments</h3>
-                <p>Comprehensive gap analysis against industry frameworks like NIST CSF or CIS 18, followed by prioritized recommendations for security control implementation and improvement. We identify what matters most and help you focus your resources where they'll have the greatest impact.</p>
-            </div>
-
-            <div class="service-details">
-                <h3>Team Security Training</h3>
-                <p>Operation Hard Target for teams - equipping your employees with the awareness and skills to recognize threats, avoid common mistakes, and become your first line of defense.</p>
-            </div>
-
-            <div class="service-details" style="margin-bottom: 0;">
-                <h3>Network Security Consulting</h3>
-                <p >Network architecture review, security configuration, and ongoing support to ensure your infrastructure is protected against modern threats.</p>
-            </div>
+                    <p>Security incidents are unavoidable and planning for them can be the difference between customer trust and customer exodus. The ICMP includes a review of your operations, assets, and risks to identify the most likely and most dangerous scenarios that could harm your business and establishing a plan to respond and communicate proactively.</p>
+                    
+                    <h3>What's included:</h3>
+                    <ul>
+                        <li>Strategic response plan aligned to modern compliance and regulatory expectations</li>
+                        <li>Executive and leadership communication guidance</li>
+                        <li>Development of technical response playbooks with your SMEs</li>
+                        <li>Incident Response Team and stakeholder training</li>
+                        <li>Tailored tabletop exercise to test and validate the response plan</li>
+                        <li>Summary report with findings and improvements</li>
+                    </ul>
+                    
+                    <div class="ideal-for">
+                        <h3>Ideal for:</h3>
+                        <ul>
+                            <li>Mid-market organizations (100–1,500 employees) without dedicated security leadership</li>
+                            <li>Companies that have experienced chaotic or uncoordinated incident response</li>
+                            <li>Growing businesses adopting new technology or entering regulated markets</li>
+                        </ul>
+                        <h3>Price: Starting at $12,500</h3> 
+                        <p>Price based on environment size/complexity and number/depth of technical playbooks developed.</p>
+                    </div>                    
                 </div>
             </div>
         </div>
 
-        <!-- Growing Enterprises -->
-        <div class="service-section" onclick="toggleService(this)" style="margin-bottom: 0;">
+        <!-- SLP -->
+        <div class="service-box" onclick="toggleService(this)">
             <div class="service-header">
-                <h2>For Growing Enterprises</h2>
+                <h2>Security Leadership Program (SLP)</h2>
                 <span class="expand-icon">▼</span>
             </div>
             <div class="service-content">
                 <div class="service-inner">
-                    <p>As your organization scales, security complexity grows. You need strategic leadership but may not be ready for a full-time CISO. We provide executive-level security guidance, compliance support, and program development to mature your security posture.</p>
-            
-            <div class="service-details">
-                <h3>Virtual CISO (vCISO) Services</h3>
-                <p>Part-time or fractional CISO services for organizations that need strategic security leadership without the cost of a full-time executive. We help you build and manage security programs, communicate risk to stakeholders, and make informed decisions about security investments.</p>
-                <p><strong>Ideal for:</strong> Organizations without dedicated security teams who need experienced leadership to guide their security strategy.</p>
-            </div>
-
-            <div class="service-details">
-                <h3>Compliance Support</h3>
-                <p>Implementation and ongoing support for compliance frameworks including:</p>
-                <ul>
-                    <li>SOC 2 readiness</li>
-                    <li>CMMC readiness</li>
-                    <li>ISO 27001 implementation</li>
-                    <li>PCI-DSS requirements</li>
-                    <li>HIPAA compliance</li>
-                </ul>
-            </div>
-
-            <div class="service-details" style="margin-bottom: 0;">
-                <h3>Security Program Development</h3>
-                <p>Building security programs from the ground up - policies, procedures, incident response plans, and security awareness programs tailored to your organization's risk profile and operational needs.</p>
-            </div>
+                    <p>For organizations needing strategic security leadership without the commitment and cost of a full-time CISO, the SLP provides a cost effective middle ground. Tailored to the needs of your organization, this fractional CISO engagement will rapidly establish or strengthen your security posture with a focus on fundamentals and high-value quick wins. Over time this will evolve into an integrated, scalable security program that can be leveraged as a competitive advantage.</p>
+                    
+                    <h3>Key Outcomes:</h3>
+                    <ul>
+                        <li>Clear security roadmap and governance framework</li>
+                        <li>Leadership alignment on priorities and risk exposure</li>
+                        <li>Execution of high-value initiatives that strengthen operational resilience</li>
+                        <li>Risk visibility, reporting, and audit readiness</li>
+                        <li>Development of security culture and internal capabilities</li>
+                    </ul>
+                    
+                    <div class="ideal-for">
+                        <h3>Ideal for:</h3>
+                        <ul>
+                            <li>Companies too small for a CISO but needing strategic security leadership</li>
+                            <li>Private Equity firms aiming to protect and grow portfolio companies</li>
+                            <li>Small SaaS businesses under audit pressure from customers, investors, or regulators</li>
+                            <li>Managed Service Providers expanding into security offerings</li>
+                        </ul>
+                        <h3>Price: Starting at $3,500/month</h3> 
+                        <p>Price based on scope, frequency, and organizational size/complexity.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -450,6 +462,7 @@
     <footer>
         <p>&copy; 2025 Maximum Effort Enterprises, LLC. All rights reserved.</p>
     </footer>
+
     <!-- Cal.com element-click embed code -->
     <script type="text/javascript">
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -461,6 +474,11 @@
         // Mobile menu toggle
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Service box toggle
+        function toggleService(element) {
+            element.classList.toggle('expanded');
         }
 
         // Particle Network Effect
@@ -554,10 +572,6 @@
                 });
             });
         });
-
-        function toggleService(element) {
-            element.classList.toggle('expanded');
-        }
     </script>
 </body>
 </html>
