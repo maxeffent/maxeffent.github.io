@@ -291,6 +291,7 @@
             <input type="hidden" name="redirect" value="thank-you.html">
             
             <div class="form-group">
+                <label style="text-align: right;">* Required Field</label>
                 <label for="name">Name *</label>
                 <input type="text" id="name" name="name" required>
             </div>
@@ -299,16 +300,25 @@
                 <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required>
             </div>
+            
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="company" id="company" name="company">
+            </div>
+            
+            <div class="form-group">
+                <label for="website">Website</label>
+                <input type="website" id="website" name="website" placeholder="https://example.com">
+            </div>
 
             <div class="form-group">
                 <label for="phone">Phone</label>
                 <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-                <small>Optional - Format: (###) ###-####</small>
             </div>
 
             <div class="form-group">
                 <label for="message">Message *</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" required placeholder="Tell us a little bit about yourself, your organization, and why you'd like to talk with us."></textarea>
             </div>
 
             <button type="submit" class="submit-button">Send Message</button>
@@ -425,6 +435,7 @@
         const submitButton = form.querySelector('.submit-button');
         const phoneInput = document.getElementById('phone');
         const emailInput = document.getElementById('email');
+        const websiteInput = document.getElementById('website'); // Add this line
 
         // Disposable email domains blocklist
         const disposableDomains = [
@@ -458,6 +469,28 @@
             return disposableDomains.includes(domain);
         }
 
+        // Website URL validation
+        function validateWebsite(url) {
+            // If field is empty and optional, return true
+            if (!url || !url.trim()) {
+                return true; // Change to false if website is required
+            }
+            
+            // URL validation regex pattern
+            const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;
+            
+            if (!urlPattern.test(url)) {
+                return false;
+            }
+            
+            // Ensure URL has protocol
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                return false;
+            }
+            
+            return true;
+        }
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -467,7 +500,7 @@
                 alert('Please use a valid business or personal email address. Disposable email addresses are not accepted.');
                 return;
             }
-
+            
             // Validate phone format if provided
             const phone = phoneInput.value.trim();
             if (phone && !/^\(\d{3}\) \d{3}-\d{4}$/.test(phone)) {
@@ -475,13 +508,20 @@
                 return;
             }
             
+            // Validate website URL if provided
+            const website = websiteInput.value.trim();
+            if (website && !validateWebsite(website)) {
+                alert('Please enter a valid website URL (e.g., https://example.com)');
+                return;
+            }
+            
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
-
+            
             const formData = new FormData(form);
             const object = Object.fromEntries(formData);
             const json = JSON.stringify(object);
-
+            
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
@@ -491,9 +531,9 @@
                     },
                     body: json
                 });
-
+                
                 const result = await response.json();
-
+                
                 if (result.success) {
                     window.location.href = 'thank-you.html';
                 } else {
